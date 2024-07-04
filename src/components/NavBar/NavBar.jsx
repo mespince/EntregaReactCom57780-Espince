@@ -1,6 +1,6 @@
 import React from 'react';
-import CartWidget from './CartWidget';
-import './NavBar.css'
+import CartWidget from './CartWidget.jsx';
+import './NavBar.css';
 
 function NavBar({ categories }) {
     return (
@@ -10,15 +10,13 @@ function NavBar({ categories }) {
                 <p>Pedidos CoderYa</p>
             </div>
             <ul>
-                <li>Hamburgusa</li>
-                <li>Sanguches</li>
-                <li>Helados</li>
+                {categories.map(category => (
+                    <li key={category}>{category}</li>
+                ))}
             </ul>
-
-            <CartWidget />
+            <CartWidget/>
         </nav>
     );
 }
-
 
 export default NavBar;

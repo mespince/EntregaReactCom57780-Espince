@@ -1,15 +1,16 @@
-import './App.css'
+import './App.css';
 import React from 'react';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ComponentePadre from './components/Ejemplos/ComponentePadre';
+import EjemploContador from './components/Ejemplos/EjemploContador';
 
 function App() {
-    const categories = ['Hamburguesas', 'Helados', 'Sandwiches'];
-
     return (
         <div className="app">
-            <NavBar />
-            <ItemListContainer />
+            <NavBar categories={['Hamburguesas', 'Helados', 'Sándwiches']} />
+            <ItemListContainer saludo="Bienvenido a mi eCommerce" />
+            
         </div>
     );
 }
