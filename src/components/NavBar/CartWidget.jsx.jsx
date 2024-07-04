@@ -1,13 +1,12 @@
 import React from 'react';
-import { FaShoppingCart } from "react-icons/fa";
+import { BsBagDash } from "react-icons/bs";
 
-function CartWidget({ itemCount }) {
-    return (
-        <div>
-            <FaShoppingCart />
-            <p>1</p>
-        </div>
-    );
+const CartWidget = () => {
+return (
+    <div className="cartwidget">
+    <BsBagDash size={35} />
+    <p>1</p>
+    </div>
+)
 }
-
-export default CartWidget;
+export default CartWidget
