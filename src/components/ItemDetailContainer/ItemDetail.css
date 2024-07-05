@@ -1,10 +1,9 @@
 .item-detail {
     width: 100%;
-    min-height: 90vh;
+    height: 100%;
     display: flex;
     align-items: center;
     margin: 20px;
-    padding: 20px;
     background-color: #333; 
     color: #fff; 
     border: 1px solid #555;
