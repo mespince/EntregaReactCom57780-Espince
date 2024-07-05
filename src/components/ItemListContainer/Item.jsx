@@ -6,7 +6,6 @@ const Item = ({ producto }) => {
         <div className="item">
             <img src={producto.imagen} alt={producto.nombre} />
             <p className="nombre">{producto.nombre}</p>
-            <p className="descripcion">{producto.descripcion}</p>
             <p className="price">PRECIO: ${producto.precio}</p>
             <div className="item-count-container">
                 <button>-</button>

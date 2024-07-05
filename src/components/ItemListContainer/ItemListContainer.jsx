@@ -2,14 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
 import ItemList from './ItemList';
 import { obtenerProductos } from '../../data/data';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({ saludo }) => {
     const [productos, setProductos] = useState([]);
 
+    const { idCategoria } = useParams();
+
     useEffect(() => {
         obtenerProductos()
             .then((respuesta) => {
-                setProductos(respuesta);
+                if (idCategoria) {
+                    const productosFiltrados = respuesta.filter((producto) => producto.categoria === idCategoria);
+                    setProductos(productosFiltrados);
+                } else {
+                    setProductos(respuesta);
+                }
             })
             .catch((error) => {
                 console.log(error);
@@ -17,7 +25,7 @@ const ItemListContainer = ({ saludo }) => {
             .finally(() => {
                 console.log("Finalizó la promesa");
             });
-    }, []);
+    }, [idCategoria]);
 
     return (
         <div className="item-list-container">
@@ -28,3 +36,4 @@ const ItemListContainer = ({ saludo }) => {
 };
 
 export default ItemListContainer;
+
