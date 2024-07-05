@@ -11,17 +11,19 @@ const Item = ({ producto }) => {
     };
 
     return (
-        <Link to={"/detalle/" + producto.id} className="item-link">
-            <div className="item">
+        <div className="item">
+            <Link to={"/detalle/" + producto.id} className="item-link">
                 <img src={producto.imagen} alt={producto.nombre} />
+                <span className="more-details">Más detalles</span>
+            </Link>
+            <div className="item-details">
                 <p className="nombre">{producto.nombre}</p>
                 <p className="price">${producto.precio}</p>
                 <div className="item-count-container">
                     <ItemCount initial={1} stock={10} onAdd={onAdd} />
                 </div>
-                <span className="more-details">Más detalles</span>
             </div>
-        </Link>
+        </div>
     );
 };
 
