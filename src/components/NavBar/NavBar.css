@@ -45,6 +45,20 @@
 
 .cart-widget {
     position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.cartwidget svg {
+    fill: #fff; /
+}
+
+.cartwidget p {
+    color: #fff; 
+    margin-left: 10px; 
 }
 
 .cart-widget img {

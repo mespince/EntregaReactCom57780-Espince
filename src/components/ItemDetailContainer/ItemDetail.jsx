@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ItemDetail.css';
 import ItemCount from '../ItemListContainer/ItemCount';
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ({ producto }) => {
-    const onAdd = (cantidadSeleccionada) => {
-        console.log(`Agregado al carrito: ${producto.nombre}, Cantidad: ${cantidadSeleccionada}`);
+    const { agregarProducto } = useContext(CartContext);
+
+    const onAdd = (contador) => {
+        const productoCarrito = {
+            ...producto,
+            cantidad: contador 
+        };
+    
+        agregarProducto(productoCarrito);
+    
+        console.log(`Agregado al carrito: ${productoCarrito}, Cantidad: ${contador}`);
     };
+    
 
     return (
         <div className="item-detail">
@@ -15,7 +26,7 @@ const ItemDetail = ({ producto }) => {
                 <p>{producto.descripcion}</p>
                 <p className="price">${producto.precio}</p>
                 <div className="item-count-container">
-                    <ItemCount initial={0} stock={10} onAdd={onAdd} />
+                    <ItemCount initial={1} stock={10} onAdd={onAdd} />
                 </div>
             </div>
         </div>
@@ -23,4 +34,5 @@ const ItemDetail = ({ producto }) => {
 };
 
 export default ItemDetail;
+
 

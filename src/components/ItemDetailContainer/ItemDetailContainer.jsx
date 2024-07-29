@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { obtenerProductos } from '../../data/data.js';
+import { obtenerProductos } from '../../utils/seedProducts.js';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 
